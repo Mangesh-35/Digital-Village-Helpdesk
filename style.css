@@ -1,0 +1,437 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo img {
+    height: 60px;
+}
+
+/* Navigation */
+nav {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+/* Hamburger Menu (Mobile) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Notice Bar */
+.notice-bar {
+    background: yellow;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 110px;  /* 👈 pushed below notice bar */
+        right: 20px;
+        background: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 220px;
+        z-index: 999; /* keep menu above everything */
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Quick Links Section */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px;
+    background: #f9f9f9;
+}
+
+.quick-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.quick-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.quick-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.quick-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f9f6f6;
+    padding: 10px;
+    transition: color 0.3s ease;
+    background-color: #833030;
+}
+
+.quick-card:hover h3 {
+    color: #4CAF50;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Panchayat Members Section */
+.panchayat {
+  padding: 40px;
+  text-align: center;
+}
+
+.panchayat h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table Layout */
+.members-table {
+  display: table;
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header, .table-row {
+  display: table-row;
+}
+
+.table-header div, .table-row div {
+  display: table-cell;
+  padding: 15px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.table-header {
+  background: #2c3e50;
+  color: #fff;
+  font-weight: bold;
+}
+
+.table-row:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table-row img {
+  width: 80px;
+  height: 100px; /* Indian passport size ratio */
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Contact Icons */
+.contact-icons a {
+  margin: 0 8px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  color: #3498db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .members-table {
+    display: block;
+    width: 100%;
+  }
+  .table-header {
+    display: none;
+  }
+  .table-row {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: left;
+  }
+  .table-row div {
+    display: block;
+    border: none;
+    padding: 5px 0;
+  }
+  .table-row img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/* Blog Page Styling */
+.blog-list {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.blog-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h2 {
+  font-size: 1.2rem;
+  margin: 15px;
+  color: #222;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  margin: 0 15px 15px;
+  color: #555;
+}
+
+.read-more {
+  margin: 10px 15px 15px;
+  padding: 8px 12px;
+  text-align: center;
+  display: inline-block;
+  background: #0077cc;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background: #005fa3;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+.footer-column p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.social-icons a img {
+  width: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+  filter: brightness(0) invert(1);
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.hero {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/Slider.jpeg") no-repeat center center/cover;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/Slider.jpeg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Overlay Layer */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* adjust opacity here */
+  z-index: 1;
+}
+
+/* Text stays above overlay */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  padding: 30px;
+}
+
+.hero p {
+  margin-bottom: 15px;
+  padding: 30px;
+}
+
+.btn {
+  background: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}

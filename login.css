@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.tab-header {
+  display: flex;
+  cursor: pointer;
+}
+
+.tab-header div {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  background: #eee;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-header .active {
+  background: #0077cc;
+  color: #fff;
+}
+
+.form-container {
+  padding: 20px;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+}
+
+form.active {
+  display: flex;
+}
+
+input, select, button {
+  margin-bottom: 12px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #0077cc;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
+/* Logo Box */
+.logo-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-box img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logo-box h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #0077cc;
+}
+
+/* Required field star */
+.required {
+  color: red;
+  font-weight: bold;
+}

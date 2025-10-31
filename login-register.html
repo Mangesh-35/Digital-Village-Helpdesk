@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo-box">
+      <img src="images/logo.png" alt="Grampanchayat Logo">
+      <h2>Bhaje Grampanchayat</h2>
+    </div>
+
+    <!-- Tab Switch -->
+    <div class="tab-header">
+      <div class="tab-link active" onclick="switchTab('login')">Login</div>
+      <div class="tab-link" onclick="switchTab('register')">Register</div>
+    </div>
+
+    <div class="form-container">
+      
+      <!-- Login Form -->
+      <form id="login" class="active">
+        <label>Email / Mobile Number <span class="required">*</span></label>
+        <input type="text" placeholder="Enter Email or Mobile" required>
+
+        <label>Password <span class="required">*</span></label>
+        <input type="password" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register">
+        <div class="name-fields">
+          <div>
+            <label>First Name <span class="required">*</span></label>
+            <input type="text" placeholder="First Name" required>
+          </div>
+          <div>
+            <label>Last Name <span class="required">*</span></label>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+        </div>
+
+        <label>Mobile Number <span class="required">*</span></label>
+        <input type="tel" placeholder="Enter Mobile Number" required>
+
+        <label>Email <span class="required">*</span></label>
+        <input type="email" placeholder="Enter Email" required>
+
+        <label>Village <span class="required">*</span></label>
+        <select required>
+          <option value="Bhaje" selected>Bhaje</option>
+        </select>
+
+        <label>Password <span class="required">*</span></label>
+        <input type="password" placeholder="Enter Password" required>
+
+        <label>Confirm Password <span class="required">*</span></label>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll("form").forEach(f => f.classList.remove("active"));
+      document.querySelectorAll(".tab-link").forEach(t => t.classList.remove("active"));
+      document.getElementById(tab).classList.add("active");
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>
